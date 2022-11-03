@@ -1,7 +1,7 @@
 #!/urs/bin/python3
 import random
 
-#from 1 to 45
+####from 1 to 45
 i=random.randint(1,46)
 print(i)
 
