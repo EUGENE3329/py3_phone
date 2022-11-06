@@ -1,8 +1,26 @@
 #!/usr/bin/python3
 
-import os
+import os, platform
 
-os.chdir("/storage/emulated/0/Documents/py3_phone/sample/")
+SYSTEM=platform.system()
+MACHINE=platform.machine()
+#작업폴더 설정
+working_dir=os.getcwd()
+if SYSTEM == "Windows":
+    os.chdir("D:\개발_코딩연습\python_연습\GitHub\py3_phone-1\sample")
+    pass
+elif SYSTEM == "macOS":
+    pass
+elif SYSTEM== "Linux":
+    if MACHINE == 'aarch64':    #smart phone
+        os.chdir("/storage/emulated/0/Documents/py3_phone/sample/")
+        
+    pass
+else:
+    print('i have no idea what this system !!!')
+    
+print( 'working_dir : ', os.getcwd() )
+
 
 # ex, iterable class
 class  get_odds:
@@ -26,7 +44,8 @@ print(  a.next()  )
 print(  a.next()  )
 print(  b.next()  )
 print(  c.next()  )
-'''# the below is not working.
+'''
+# the below is not working. 네가 생각하는 그런 iter가 아님.
 for ele in b:
     print( b )
 '''
