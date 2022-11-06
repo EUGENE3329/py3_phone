@@ -61,6 +61,7 @@ def  fibonacci():
     #end of line of fibonacci.
 
 tmp_fibo=fibonacci()
+print('start !!! _______')
 for ele in range(1, 100):
     print(   next(tmp_fibo)  )
     if ele%10 == 0:
