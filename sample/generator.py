@@ -2,7 +2,8 @@
 
 # handling generator, which is made from a part of
 # column or row that is come from sheet of xlsx.
-import platform, os
+import os
+import platform
 
 SYSTEM=platform.system()
 MACHINE=platform.machine()
@@ -39,7 +40,9 @@ datetime_gen= ws.iter_cols( min_row=2,
                                                       max_col=idx_colu_date
                                                     )
 c=next( datetime_gen )
+print("==="*10,"\n", c)
 
+print("printing methods, generator type obj -datetime_gen-")
 print( type(datetime_gen),  '\n' ,
 #            len(datetime_gen),   '\n',   #not working.
               len( c ), '\n',
