@@ -2,8 +2,7 @@
 
 # handling generator, which is made from a part of
 # column or row that is come from sheet of xlsx.
-import os
-import platform
+import platform, os
 
 SYSTEM=platform.system()
 MACHINE=platform.machine()
@@ -38,25 +37,34 @@ for cell in ws[ '2' ]:    #2행에서 날짜셀 찾기
 datetime_gen= ws.iter_cols( min_row=2,
                                                       min_col=idx_colu_date,
                                                       max_col=idx_colu_date
-                                                    )
-c=next( datetime_gen )
-print("==="*10,"\n", c)
+                                                      )
+                                                      
+row_gen = ws.iter_rows(   
+                                             
+                                             )
+# extracting datetime
+col_s=next( datetime_gen )
+ro_s =
 
-print("printing methods, generator type obj -datetime_gen-")
 print( type(datetime_gen),  '\n' ,
-#            len(datetime_gen),   '\n',   #not working.
               len( c ), '\n',
              dir(datetime_gen),    '\n' ,
-             
+             ' ==========',
+#            len(datetime_gen),   '\n',   #not working. 
+#             datetime_gen.__doc__, '\n',    # None
+#             datetime_gen.close(),                #None
+#             datetime_gen.gi_yieldfrom()   #not working
           )
           
 #U can check that generator is made by 
 # one time && one object.
+'''
+# meaningless
 cnt=1
 for i in datetime_gen:
-    print( cnt, '\t', i   )
+    print( '반복되나 : ', cnt, '\t', i   )
     cnt += 1
-
+'''
 #tmp = next(datetime_gen)    
 '''
 Have you ever had to work with 
